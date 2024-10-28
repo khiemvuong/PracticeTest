@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PracticeExam</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PracticeExam.styles.css" asp-append-version="true" />
+    <style>
+        .centered-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; /* Độ rộng tùy chỉnh cho form */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="navbar-brand mx-auto">
+                    <!-- Nội dung khác trong navbar nếu cần -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="text-center centered-form">
+            <form>
+                <div class="form-group">
+                    <label for="username">Tài khoản:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Nhập tài khoản" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" required />
+                </div>
+                <a class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Products" asp-action="Index">Login</a>
+            </form>
+        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
